@@ -27,4 +27,5 @@ To get started
 
 - clone this repo `git clone https://github.com/mohamed-sameer/landing-page.git`
 - enter the directory `cd landing-page`
-- open index.html file
+- open directory in VS code `code .`
+- run html.index file using live server extension
