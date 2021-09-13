@@ -13,15 +13,15 @@
  *
 */
 
-// get elements and store them in variabels
+// get elements and store them in variables
 const mainTag = document.getElementsByTagName('main');
 const navbar = document.getElementById('navbar__list');
 
 // create arrays
-const sectionDataNav = []; // get data-nav atrr value
+const sectionDataNav = []; // get data-nav attr value
 const MainTagArr = [...mainTag]; // convert htmlCollection to array
-let sectionsArr = []; // initalize empty array to store specific tags in it [all sections]
-const sectionIds = []; // create empty array to store ids of section in it to use them insie links
+let sectionsArr = []; // initialize empty array to store specific tags in it [all sections]
+const sectionIds = []; // create empty array to store ids of section in it to use them inside links
 const sectionsOffset = {};
 
 for (const item of MainTagArr) {
@@ -38,12 +38,14 @@ for (const item of sectionsArr) {
   sectionsOffset[itemId] = itemOffsetTop;
 }
 
-// add attributes,text to elenemt and append every one to its parents
+// add attributes,text to element and append every one to its parents
 for (let i = 0; i < sectionDataNav.length; i += 1) {
   // create li and link tags
   const li = document.createElement('li');
   const aLink = document.createElement('a');
 
+  // setting href to a tag used later for if condition to
+  // compare if section id == to href so when user click on link it will move them to section
   for (let j = 0; j < sectionIds.length; j += 1) {
     aLink.setAttribute('href', `#${sectionIds[i]}`);
   }
@@ -53,7 +55,6 @@ for (let i = 0; i < sectionDataNav.length; i += 1) {
   li.appendChild(aLink);
   navbar.appendChild(li);
 }
-
 const links = [...document.querySelectorAll('.menu__link')];
 
 // toggle active class
